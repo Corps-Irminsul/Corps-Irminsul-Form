@@ -39,6 +39,10 @@
       color: #333;
       font-weight: 500;
     }
+    input::placeholder,
+    textarea::placeholder {
+      color: #aaa;
+    }
     input, textarea, select {
       width: 100%;
       padding: 10px;
@@ -46,6 +50,9 @@
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 14px;
+    }
+    select:invalid {
+      color: #888;
     }
     button {
       margin-top: 25px;
@@ -71,20 +78,21 @@
 </head>
 <body>
   <div class="container">
-    <img src="https://chat.openai.com/cdn-cgi/imagedelivery/3a1cc6b88f944bbb8ecf015c7b4c85ef/d5a91228-9353-434d-afc2-487f1e92d150/public" alt="Corps Irminsul" class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Wappen_Irminsul_Hamburg.png/600px-Wappen_Irminsul_Hamburg.png" alt="Corps Irminsul" class="logo">
     <h1>Interesse am Corps Irminsul?</h1>
     <form action="https://formspree.io/f/movwldvj" method="POST">
       <label for="vorname">Vorname</label>
-      <input type="text" id="vorname" name="vorname" required />
+      <input type="text" id="vorname" name="vorname" placeholder="Max" required />
 
       <label for="nachname">Nachname</label>
-      <input type="text" id="nachname" name="nachname" required />
+      <input type="text" id="nachname" name="nachname" placeholder="Mustermann" required />
 
       <label for="studiengang">Studiengang</label>
-      <input type="text" id="studiengang" name="studiengang" required />
+      <input type="text" id="studiengang" name="studiengang" placeholder="z. B. Wirtschaftsingenieurwesen" required />
 
       <label for="semester">Semester</label>
-      <select id="semester" name="semester">
+      <select id="semester" name="semester" required>
+        <option value="" disabled selected>Bitte auswählen</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -95,7 +103,8 @@
       </select>
 
       <label for="alter">Alter</label>
-      <select id="alter" name="alter">
+      <select id="alter" name="alter" required>
+        <option value="" disabled selected>Bitte auswählen</option>
         <option value="17">17</option>
         <option value="18">18</option>
         <option value="19">19</option>
@@ -108,7 +117,8 @@
       </select>
 
       <label for="abischnitt">Abischnitt</label>
-      <select id="abischnitt" name="abischnitt">
+      <select id="abischnitt" name="abischnitt" required>
+        <option value="" disabled selected>Bitte auswählen</option>
         <option value="1.0">1.0</option>
         <option value="1.1">1.1</option>
         <option value="1.2">1.2</option>
@@ -129,19 +139,21 @@
       </select>
 
       <label for="email">E-Mail-Adresse</label>
-      <input type="email" id="email" name="email" required />
+      <input type="email" id="email" name="email" placeholder="max.mustermann@email.de" required />
 
       <label for="telefon">Telefonnummer</label>
       <input type="tel" id="telefon" name="telefon" placeholder="z. B. +49 170 1234567" required />
 
       <label for="erfahrung">Hast du schon Erfahrungen mit Verbindungen oder Corps?</label>
-      <select id="erfahrung" name="erfahrung">
+      <select id="erfahrung" name="erfahrung" required>
+        <option value="" disabled selected>Bitte auswählen</option>
         <option value="Ja">Ja</option>
         <option value="Nein">Nein</option>
       </select>
 
       <label for="quelle">Wie hast du von uns erfahren?</label>
-      <select id="quelle" name="quelle">
+      <select id="quelle" name="quelle" required>
+        <option value="" disabled selected>Bitte auswählen</option>
         <option value="Recherche">Recherche</option>
         <option value="Wohnungssuche">Wohnungssuche</option>
         <option value="Social Media">Social Media</option>
@@ -151,10 +163,11 @@
       </select>
 
       <label for="interesse">Warum interessierst du dich für das Corps Irminsul?</label>
-      <textarea id="interesse" name="interesse" rows="4" required></textarea>
+      <textarea id="interesse" name="interesse" placeholder="Schreibe hier deine Motivation..." rows="4" required></textarea>
 
       <label for="veranstaltung">Möchtest du zu einer Veranstaltung eingeladen werden?</label>
-      <select id="veranstaltung" name="veranstaltung">
+      <select id="veranstaltung" name="veranstaltung" required>
+        <option value="" disabled selected>Bitte auswählen</option>
         <option value="Ja">Ja</option>
         <option value="Nein">Nein</option>
       </select>
